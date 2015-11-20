@@ -7,13 +7,16 @@
 
   <!-- styles -->
   <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/yeti/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles/css/main.css">
+  <link rel="stylesheet" type="text/css" href="./styles/css/main.css">
 
 </head>
 
   <div class="container">
     <div ng-view></div>
+
+    <example-directive></example-directive>
   </div>
+
 
 
   <!-- CDN Dependencies -->
@@ -25,16 +28,16 @@
   <!-- Angular-routing -->
   <script src="./angular-routes.js"></script>
 
-  <!-- Partials -->
-  <script src="./app/partials/home.html"></script>
-
   <!-- Services -->
   <script src="./app/services/services.js"></script>
 
   <!-- Modules -->
   <script src="./app/app.module.js"></script>
   <script src="./app/components/components.module.js"></script>
-  <script src="./app/example-directive/example-directive.module.js"></script>
+  <script src="./app/components/example-directive/example-directive.module.js"></script>
+
+  <!-- Directives -->
+  <script src="./app/components/example-directive/example-directive.js"></script>
 
 </body>
 </html>

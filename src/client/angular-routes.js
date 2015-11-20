@@ -1,9 +1,14 @@
-var myApp = angular.module('app', ['ngRoute']);
+(function() {
+    'use strict';
 
-app.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider
-    .when('/', {
-        templateUrl: 'app/partials/home.html'
-    })
-    .otherwise({redirectTo: '/'});
-}]);
+    var app = angular.module('app', ['ngRoute']);
+
+    app.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider
+        .when('/', {
+            templateUrl: './app/partials/home.html'
+        })
+        .otherwise({redirectTo: '/'});
+    }]);
+
+})();
