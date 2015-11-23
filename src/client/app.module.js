@@ -1,1 +1,1 @@
-angular.module('app', ['ngRoute', 'app.directive']);
+angular.module('app', ['ngRoute', 'app.test-directive']);
