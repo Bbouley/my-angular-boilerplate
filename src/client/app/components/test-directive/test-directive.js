@@ -4,7 +4,7 @@ angular.module('app.test-directive').directive('testDirective', function() {
         // transclude  : false,
         templateUrl : 'app/components/test-directive/test-directive.html',
         link : function(scope) {
-            console.log(scope);
+
         }
     };
 });
