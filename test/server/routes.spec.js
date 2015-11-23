@@ -10,5 +10,5 @@ describe('example', function() {
     it('should return 1', function() {
         var test = 1;
         test.should.equal(1);
-    })
-})
+    });
+});

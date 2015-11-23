@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./src/server/bin/www",
-    "test": "mocha",
+    "test": "find ./src -name '*.spec.js' | xargs mocha -R spec",
     "cov": "istanbul cover _mocha -- -R spec",
     "send-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
@@ -17,6 +17,7 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "angular-mocks": "^1.4.8",
     "browser-sync": "2.9.6",
     "chai": "^3.4.1",
     "chai-http": "^1.0.0",
@@ -28,13 +29,19 @@
     "gulp-jshint": "^1.11.2",
     "gulp-minify-css": "^1.2.1",
     "gulp-nodemon": "^2.0.4",
+    "gulp-protractor": "0.0.12",
     "gulp-uglify": "^1.4.2",
     "istanbul": "^0.4.0",
     "jscs": "^2.5.1",
     "jshint-stylish": "^2.0.1",
+    "karma": "^0.13.15",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-mocha": "^0.2.1",
     "mocha": "^2.3.3",
     "mocha-jscs": "^4.0.0",
     "mocha-jshint": "^2.2.5",
+    "protractor": "^3.0.0",
     "run-sequence": "^1.1.4"
   }
 }

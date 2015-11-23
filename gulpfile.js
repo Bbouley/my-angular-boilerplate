@@ -11,6 +11,7 @@ var minifyCSS = require('gulp-minify-css');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
+var Server = require('karma').Server;
 
 //*** Config ***//
 
@@ -124,6 +125,13 @@ gulp.task('connectDist', function (cb) {
                 reload({ stream: false });
             }, 1000);
         });
+});
+
+gulp.task('karma', function (done) {
+    new Server({
+        configFile : __dirname + '/test/karma.conf.js',
+        singleRun  : true
+    }, done).start();
 });
 
 
