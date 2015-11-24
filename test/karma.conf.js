@@ -8,17 +8,18 @@ module.exports = function(config) {
         basePath   : '.',
 
         // frameworks to use
-        frameworks : ['mocha'],
+        frameworks : ['mocha', 'chai'],
 
         // list of files / patterns to load in the browser
         files: [
-            {pattern: '**/*.js', included: true},
-            'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-mocks.js',
             'http://code.jquery.com/jquery-2.1.4.min.js',
             'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js',
             'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js',
-            'http://code.angularjs.org/X.Y.Z/angular-mocks.js',
-            'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js'
+            'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-mocks.js',
+            '../src/**/*.js',
+            '../test/**/*.js',
+            '../src/**/*.html'
         ],
 
         // test results reporter to use
@@ -27,13 +28,13 @@ module.exports = function(config) {
         // web server port
         port        : 9876,
 
-        proxies : {
-            '/'     : 'http://localhost:3000'
+        proxies     : {
+        '/'         : 'http://localhost:3000'
         },
 
-        exclude : [
-            '../test/**/*.js'
-        ],
+        // exclude     : [
+        //     '../test/**/*.js'
+        // ],
 
         // enable / disable colors in the output (reporters and logs)
         colors      : true,
