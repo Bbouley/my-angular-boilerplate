@@ -4,6 +4,10 @@
 module.exports = function(config) {
     config.set({
 
+        preprocessors: {
+            '**/*.html': 'ng-html2js'
+        },
+
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath   : '',
 
@@ -17,17 +21,28 @@ module.exports = function(config) {
             'https://code.jquery.com/jquery-2.1.4.min.js',
             'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js',
             'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js',
-            'http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-mocks.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-mocks.js',
 
             // *** Source *** //
-            '../src/client/angular-routes.js',
+            // '../src/**/*.js',
+            // '../src/client/angular-routes.js',
             '../src/client/app.module.js',
             '../src/client/app/components/test-directive/test-directive.module.js',
             '../src/client/app/components/test-directive/test-directive.js',
 
             // *** Tests *** //
-            './client/client.spec.js'
+            '../test/client/client.spec.js',
+
+            // *** Partials *** //
+            '../src/client/app/partials/home.html',
+            // '*.html.ext',
+            // '../src/**/*.html'
         ],
+
+        ngHtml2JsPreprocessor: {
+            stripPrefix: 'src/client/',
+            moduleName : 'dir-templates'
+        },
 
         // test results reporter to use
         reporters   : ['progress'],
@@ -37,16 +52,6 @@ module.exports = function(config) {
 
         // enable / disable colors in the output (reporters and logs)
         colors      : true,
-
-        proxies: {
-            '/': 'http://localhost:3000/'
-        },
-
-        plugins: [
-            'karma-chrome-launcher',
-            'karma-chai',
-            'karma-mocha'
-        ],
 
         // level of logging
         logLevel    : config.LOG_INFO,
@@ -58,10 +63,17 @@ module.exports = function(config) {
         browsers    : ['Chrome'],
 
         // Continuous Integration mode
-        singleRun   : true,
+        singleRun   : false,
 
         // Concurrency level
         // how many browser should be started simultanous
-        concurrency : Infinity
+        concurrency : Infinity,
+
+        plugins: [
+            'karma-mocha',
+            'karma-chai',
+            'karma-ng-html2js-preprocessor',
+            'karma-chrome-launcher',
+        ]
     })
 }
