@@ -1,22 +1,41 @@
-describe('Test the test-directive', function () {
+describe('test-directive', function() {
 
-  var compile, scope, directiveElem;
+    // var scope,
+    //     $compile;
 
-  beforeEach(function () {
-      module('app.test-directive');
-  });
+    // beforeEach(function() {
+    //     module('app.test-directive');
+    // });
+
+    // beforeEach(inject(function($injector) {
+    //     $compile = $injector.get('$compile');
+    //     var $rootScope = $injector.get('$rootScope');
+
+    //     scope = $rootScope.$new();
+    // }));
+
+    // afterEach(function() {
+    //     scope.$destroy();
+    // })
+
+    var injector,
+        element,
+        scope;
+
+    beforeEach(function() {
+      injector = angular.injector(['app.test-directive'])
+
+      injector.invoke(function($rootScope, $compile) {
+        scope = $rootScope.$new();
+        element =  $compile('<test-directive></test-directive>')(scope);
+        scope.$apply();
+      })
+    })
 
 
-  beforeEach(inject(function ($compile, $rootScope) {
-      $scope = $rootScope.$new();
-      element = $compile('<test-directive></test-directive>')(scope);
-  }));
+    it('displays the template html', function(done) {
+        done();
+    });
 
-
-  it('creates the directive', function () {
-    scope.$digest();
-    console.log('test');
-  });
 
 });
-
