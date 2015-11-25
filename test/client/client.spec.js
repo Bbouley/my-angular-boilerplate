@@ -1,61 +1,32 @@
-// describe('test-directive', function() {
-
-//     var scope,
-//         $compile,
-//         element;
-
-//     beforeEach(function() {
-//         module('app.test-directive');
-//     });
-
-//     beforeEach(inject(function($injector) {
-//         $compile = $injector.get('$compile');
-//         var $rootScope = $injector.get('$rootScope');
-//         scope = $rootScope.$new();
-//     }));
-
-//     afterEach(function() {
-//         scope.$destroy();
-//     })
-
-//     it('displays the template html', function(done) {
-//         element = angular.element('<test-directive></test-directive>');
-//         $compile('<test-directive></test-directive>')(scope);
-//         console.log(element);
-//         assert.equal(element.html(), 'Here is your test-directive template')
-//         done();
-//     });
-
-// });
-
-describe('test-directive angular docs style', function() {
+describe('creating the test-directive', function() {
     var element,
-        scope;
+        scope,
+        vm;
 
-    // var testHtml = '<h1>testing</h1>'
-
-    // $httpBackend.when('GET', '/app/components/test-directive/test-directive.html').respond(testHtml);
-
-
-    beforeEach(module('app.test-directive'));
-
-    // beforeEach(module('../../src/client/app/components/test-directive/test-directive.html', '../../src/client/app/partials/home.html' ))
-
-    // beforeEach(module('dir-templates'))
+    beforeEach(module('app'));
 
     beforeEach(inject(function($compile, $rootScope, $templateCache) {
-        $templateCache.put('../src/client/app/partials/home.html');
         element = angular.element('<test-directive></test-directive>');
-        scope = $rootScope;
-        // $templateCache.put('../../src/client/app/components/test-directive/test-directive.html', '.<template-goes-here />');
-        $compile(element)(scope);
-        scope.$digest();
+
+        $templateCache.put('app/components/test-directive/test-directive.html', '');
+        console.log($templateCache.info());
+
+        scope = $rootScope.$new();
+        element = $compile(element)(scope);
+        scope.$digest(element);
+
+        vm = element.controller('test-directive')
     }));
 
-    it('should display html', function() {
+
+    it('the element should be created', function() {
         console.log(element);
-        var header = element.find('h1');
-        console.log(element.html());
+        expect(element).to.be.defined;
+        expect(vm).to.be.defined;
+    });
+
+    it('should have access to the controller', function() {
+        expect(vm.people).to.deep.equal(['me', 'myself', 'I'])
     })
 
 })
