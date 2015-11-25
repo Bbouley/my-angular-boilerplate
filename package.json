@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./src/server/bin/www",
-    "test": "find ./src -name '*.spec.js' | xargs mocha -R spec",
+    "test": "find ./test/server -name '*.spec.js' | xargs mocha -R spec",
     "cov": "istanbul cover _mocha -- -R spec",
     "send-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },

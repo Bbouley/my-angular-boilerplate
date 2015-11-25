@@ -25,7 +25,7 @@ module.exports = function(config) {
             '../src/client/app/components/test-directive/test-directive.js',
 
             // *** Tests *** //
-            '../test/client/client.spec.js',
+            '../test/client/*.spec.js',
         ],
 
         // test results reporter to use
