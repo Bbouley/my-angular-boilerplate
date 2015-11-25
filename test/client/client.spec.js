@@ -28,20 +28,26 @@
 
 // });
 
-describe('test-directive angular docs style', function(homeTemplate) {
+describe('test-directive angular docs style', function() {
     var element,
         scope;
 
-    beforeEach(module('app'));
+    // var testHtml = '<h1>testing</h1>'
+
+    // $httpBackend.when('GET', '/app/components/test-directive/test-directive.html').respond(testHtml);
+
+
+    beforeEach(module('app.test-directive'));
 
     // beforeEach(module('../../src/client/app/components/test-directive/test-directive.html', '../../src/client/app/partials/home.html' ))
 
     // beforeEach(module('dir-templates'))
 
-    beforeEach(inject(function($compile, $rootScope) {
-        // $templateCache.put('../src/client/app/partials/home.html', homeTemplate);
+    beforeEach(inject(function($compile, $rootScope, $templateCache) {
+        $templateCache.put('../src/client/app/partials/home.html');
         element = angular.element('<test-directive></test-directive>');
         scope = $rootScope;
+        // $templateCache.put('../../src/client/app/components/test-directive/test-directive.html', '.<template-goes-here />');
         $compile(element)(scope);
         scope.$digest();
     }));

@@ -4,10 +4,6 @@
 module.exports = function(config) {
     config.set({
 
-        preprocessors: {
-            '**/*.html': 'ng-html2js'
-        },
-
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath   : '',
 
@@ -34,10 +30,14 @@ module.exports = function(config) {
             '../test/client/client.spec.js',
 
             // *** Partials *** //
-            '../src/client/app/partials/home.html',
+            // '../src/client/app/partials/home.html',
             // '*.html.ext',
-            // '../src/**/*.html'
+            '../src/client/**/*.html'
         ],
+
+        preprocessors: {
+            '../src/clent/**/*.html': 'ng-html2js'
+        },
 
         ngHtml2JsPreprocessor: {
             stripPrefix: 'src/client/',
