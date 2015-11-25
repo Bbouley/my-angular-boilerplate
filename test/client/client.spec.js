@@ -21,7 +21,7 @@ describe('creating the test-directive', function() {
 
 
     it('the element should be created', function() {
-        // console.log(element);
+        console.log(element);
         expect(element).to.be.defined;
         expect(vm).to.be.defined;
     });
