@@ -8,7 +8,7 @@ describe('creating the test-directive', function() {
     beforeEach(inject(function($compile, $rootScope, $templateCache) {
         element = angular.element('<test-directive></test-directive>');
 
-        $templateCache.put('app/components/test-directive/test-directive.html', '');
+        $templateCache.put('/src/client/app/components/test-directive/test-directive.html', '');
 
         scope = $rootScope.$new();
         element = $compile(element)(scope);
