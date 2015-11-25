@@ -20,29 +20,13 @@ module.exports = function(config) {
             'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-mocks.js',
 
             // *** Source *** //
-            // '../src/**/*.js',
-            // '../src/client/angular-routes.js',
             '../src/client/app.module.js',
             '../src/client/app/components/test-directive/test-directive.module.js',
             '../src/client/app/components/test-directive/test-directive.js',
 
             // *** Tests *** //
             '../test/client/client.spec.js',
-
-            // *** Partials *** //
-            // '../src/client/app/partials/home.html',
-            // '*.html.ext',
-            '../src/client/**/*.html'
         ],
-
-        preprocessors: {
-            '../src/clent/**/*.html': 'ng-html2js'
-        },
-
-        ngHtml2JsPreprocessor: {
-            stripPrefix: 'src/client/',
-            moduleName : 'dir-templates'
-        },
 
         // test results reporter to use
         reporters   : ['progress'],
