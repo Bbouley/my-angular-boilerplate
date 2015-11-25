@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="app.test-directive">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bradleys MEAN Boilerplate</title>
+
+  <!-- styles -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/yeti/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../../src/client/styles/css/main.css">
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.4/jasmine.min.js"></script>
+  <link href = "https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.4/jasmine.min.css">
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.4/jasmine-html.min.js"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.4/boot.min.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <test-directive id = "test"></test-directive>
+  </div>
+
+
+  <!-- CDN Dependencies -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+
+  <!-- Components -->
+  <script src="/src/client/app/components/test-directive/test-directive.js"></script>
+
+  <script type = 'text/javascript'>
+  jQuery(function(){
+
+      describe("A suite", function() {
+
+        it("contains spec with an expectation", function(done) {
+
+            console.log(jQuery("#test h1").html())
+            expect(jQuery("#test h1").eq(0)).not.toBe(null);
+            done();
+
+        });
+      });
+
+    });
+  </script>
+
+
+
+
+
+</body>
+</html>

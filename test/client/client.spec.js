@@ -9,18 +9,19 @@ describe('creating the test-directive', function() {
         element = angular.element('<test-directive></test-directive>');
 
         $templateCache.put('app/components/test-directive/test-directive.html', '');
-        console.log($templateCache.info());
+        // console.log($templateCache.info());
 
         scope = $rootScope.$new();
         element = $compile(element)(scope);
         scope.$digest(element);
 
-        vm = element.controller('test-directive')
+        vm = element.controller('test-directive');
+        console.log(vm);
     }));
 
 
     it('the element should be created', function() {
-        console.log(element);
+        // console.log(element);
         expect(element).to.be.defined;
         expect(vm).to.be.defined;
     });
