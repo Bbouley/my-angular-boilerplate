@@ -20,14 +20,14 @@ module.exports = function(config) {
             'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-mocks.js',
 
             // *** Source *** //
-
-            // As more modules are added, they need to be inserted in here.
-            '../src/client/app.module.js',
-            '../src/client/app/components/test-directive/test-directive.module.js',
-            '../src/client/app/components/test-directive/test-directive.js',
+            '../src/client/**/*.js',
 
             // *** Tests *** //
             '../test/client/*.spec.js',
+        ],
+
+        exclude : [
+            '../src/client/angular-routes.js'
         ],
 
         // test results reporter to use

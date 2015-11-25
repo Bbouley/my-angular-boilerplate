@@ -2,11 +2,6 @@ var testDirective = angular.module('app.test-directive', []);
 
 testDirective.directive('testDirective', function() {
 
-    function testDirectiveController($scope) {
-        var vm = this;
-        vm.people = ['me', 'myself', 'I'];
-    }
-
     return {
         restrict   : 'EA',
         transclude : false,
@@ -18,6 +13,12 @@ testDirective.directive('testDirective', function() {
         link : function(scope) {
         }
     };
+
+    function testDirectiveController($scope) {
+        var vm = this;
+        vm.people = ['me', 'myself', 'I'];
+    }
+
 });
 
 
