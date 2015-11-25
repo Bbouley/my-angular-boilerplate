@@ -32,8 +32,6 @@
 
   <script type = 'text/javascript'>
 
-  //test running, but async issue is holding something up. #test is not created, only console logs with a setTimeout
-
   jQuery(function(){
 
       describe("Creating Directive", function() {
@@ -41,7 +39,7 @@
         it("should display correct html", function(done) {
 
             setTimeout(function() {
-               //setTimeout needed to log this, but tests dont run with setTimeout.
+
                 console.log(jQuery("#test h1").html())
                 expect(jQuery("#test h1").html()).toBe('Here is your test-directive template');
                 done();
