@@ -39,10 +39,14 @@
       describe("A suite", function() {
 
         it("contains spec with an expectation", function(done) {
-            //setTimeout needed to log this, but tests dont run with setTimeout.
-            console.log(jQuery("#test h1").html())
-            expect(jQuery("#test h1").eq(0)).not.toBe(null);
-            done();
+
+            setTimeout(function() {
+               //setTimeout needed to log this, but tests dont run with setTimeout.
+                console.log(jQuery("#test h1").html())
+                expect(jQuery("#test h1").html()).toBe('Here is your test-directive template');
+                done();
+
+            }, 500)
 
         });
       });
