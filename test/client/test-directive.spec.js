@@ -28,11 +28,4 @@ describe('creating the test-directive', function() {
         expect(vm.people).to.deep.equal(['me', 'myself', 'I'])
     })
 
-})
-
-describe('true', function() {
-    it('should be true', function(done) {
-        expect(1).to.equal(1);
-        done()
-    });
 });
