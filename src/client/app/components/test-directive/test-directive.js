@@ -14,7 +14,7 @@ testDirective.directive('testDirective', function() {
         }
     };
 
-    function testDirectiveController($scope) {
+    function testDirectiveController() {
         var vm = this;
         vm.people = ['me', 'myself', 'I'];
     }
